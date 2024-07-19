@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>DWELLHUB - Web Home Services</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon" />
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Header Start -->
+    <div class="container-fluid">
+      <div class="row d-flex">
+        <div class="col-lg-4 bg-secondary d-lg-block m-0">
+          <a href="" class="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center">
+            <h1 class="m-0 display-3 text-primary">DWELLHUB</h1>
+          </a>
+        </div>
+        <div class="col-lg-8 p-0 m-0">
+          <div class="row bg-dark d-lg-flex p-0 m-0">
+            <div class="col-lg-7 p-0 m-0 text-left text-white">
+              <div class="h-100 d-inline-flex align-items-center border-right border-primary py-2 px-3">
+                <i class="fa fa-envelope text-primary mr-2"></i>
+                <small>dwellhub@gmail.com</small>
+              </div>
+              <div class="h-100 d-inline-flex align-items-center py-2 px-2">
+                <i class="fa fa-phone-alt text-primary mr-2"></i>
+                <small>+91 7788992200</small>
+              </div>
+            </div>
+            <button
+              class="col-lg-5 p-0 m-0"
+              onclick="redirect()"
+              style="background-color: #25d366; color: #ffffff; border: none; padding: 10px 15px; cursor: pointer"
+            >
+              Contact on Whatsapp
+            </button>
+
+            <script>
+              function redirect() {
+                var phoneNumber = "919789424077";
+                var message = "Hello, can You help me out?";
+                var encodedMessage = encodeURIComponent(message);
+                var whatsappLink = "https://wa.me/" + phoneNumber + "/?text=" + encodedMessage;
+                window.location.href = whatsappLink;
+              }
+            </script>
+          </div>
+          <nav class="navbar navbar-expand-lg bg-white navbar-light p-0">
+            <a href="" class="navbar-brand d-block d-lg-none">
+              <h1 class="m-0 display-4 text-primary">dwellhub</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+              <div class="navbar-nav mr-auto py-0">
+                <a href="/home" class="nav-item nav-link">Home</a>
+                <a href="/about" class="nav-item nav-link">About Us</a>
+                <a href="/contact" class="nav-item nav-link">Contact us</a>
+                <a href="/service" class="nav-item nav-link"> Our Service</a>
+                <a href="/signout" class="nav-item nav-link"> Logout</a>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <!-- Header End -->
+

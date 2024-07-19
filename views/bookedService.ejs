@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= page %> Services</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <style>
+      body {
+        background-image: url("/img/blog-2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }
+      .bookedServices {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(255, 255, 255, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        padding: 2% 5%;
+        width: 80%;
+      }
+      .service {
+        backdrop-filter: blur(16px) saturate(180%);
+        -webkit-backdrop-filter: blur(16px) saturate(180%);
+        background-color: rgba(155, 155, 155, 0.75);
+        border-radius: 12px;
+        border: 1px solid rgba(209, 213, 219, 0.3);
+        padding: 2%;
+      }
+      .service p {
+        color: #000;
+      }
+      .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bookedServices my-5">
+      <div class="title-container">
+        <h1><%= page %> Services</h1>
+        <button class="btn btn-primary" onclick="window.location.pathname='/service'">GO BACK</button>
+      </div>
+      <div class="row my-5">
+        <% services.forEach(function(service) { %>
+        <div class="col-lg-6">
+          <div class="service mx-2">
+            <h2><%= service.name %></h2>
+            <p>Email: <%= service.email %></p>
+            <p>BookID:<%= service._id %></p>
+            <p>Phone Number: <%= service.phoneNumber %></p>
+            <p>Address: <%= service.address %></p>
+            <p>Booked Date: <%= service.date.toLocaleString() %></p>
+            <p>Booked Price: <%= service.price %></p>
+            <p>Service Type: <%= service.type %></p>
+          </div>
+        </div>
+        <% }); %>
+      </div>
+      <% if(services.length==0){ %>
+      <p>There is no <%= page %> services booked</p>
+      <% } %>
+    </div>
+  </body>
+</html>
